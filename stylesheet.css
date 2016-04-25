@@ -1,0 +1,44 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+}
+li {
+  border: 1px solid #9d9da9;
+  background: #d3edfc;
+  padding: 5px 10px;
+  color: #000;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #37637b;
+  font-weight: 550;
+}
+button {
+  background: #d3edfc;
+  border: 1px solid #9d9da9;
+}
+li span {
+  padding-left: 10px;
+  cursor: default;
+}
+.checked {
+  text-decoration: line-through;
+  color: #9d9da9;
+  font-weight: 900;
+}
+.todoName {
+  font-family: monospace;
+  font-size: 16px;
+  color: #aaaaaa;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+}
+#inItemText {
+  font-size: 13px;
+  font-family: monospace;
+  color: #aaaaaa;
+}

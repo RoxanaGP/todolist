@@ -39,3 +39,33 @@ li span {
   font-family: monospace;
   color: #aaaaaa;
 }
+#total {
+  font-family: monospace;
+  font-size: 13px;
+  color: #aaaaaa;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+}
+.totalIt {
+  font-family: monospace;
+  font-size: 13px;
+  color: #aaaaaa;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+}
+button {
+  border: 1px solid #9d9da9;
+  background: white;
+  padding: 5px 10px;
+  margin-left: 330px;
+  color: #000;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #9d9da9;
+  font-weight: 550;
+}

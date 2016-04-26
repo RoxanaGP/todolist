@@ -15,10 +15,7 @@ li {
   color: #37637b;
   font-weight: 550;
 }
-button {
-  background: #d3edfc;
-  border: 1px solid #9d9da9;
-}
+
 li span {
   padding-left: 10px;
   cursor: default;

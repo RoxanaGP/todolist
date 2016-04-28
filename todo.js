@@ -9,7 +9,7 @@ function updateItemStatus() {
   }
 }
 
- function renameItem () {
+function renameItem () {
   var newText = prompt("What should this item be renamed to?");
   if (!newText || newText == "" || newText == " ") {
     return false;
@@ -24,37 +24,53 @@ function deleteElement (varza) {
     return;
   }
   li.parentElement.removeChild(li);
-  countElements();
+  incrementCountDeleted();
 }
 
 function addNewItem (list, itemText) {
   var date = new Date();
   var id = "" + date.getHours() + date.getMinutes() + date.getSeconds() + date.getMilliseconds();
 
-  var listItem = document.createElement("li");
-  listItem.id = "li_" + id;
-
-  var checkBox = document.createElement("input");
-  checkBox.type = "checkbox";
-  checkBox.id = "cb_" + id;
-  checkBox.onclick = updateItemStatus;
-
-  var span = document.createElement("span");
-  span.id = "item_" + id;
-  span.innerText = itemText;
-  span.onclick = renameItem;
-
-  var deleteElem = document.createElement("button");
-  deleteElem.type = "button";
-  deleteElem.innerText = "Delete!";
-  deleteElem.onclick = function () {
-    deleteElement(this.parentElement);
-  };
+  var listItem = createLi(id);
+  var checkBox = createCheckB(id);
+  var span = renameSpan(id);
+  var deleteElem = createDeleteBtn(id);
 
   listItem.appendChild(checkBox);
   listItem.appendChild(span);
   listItem.appendChild(deleteElem);
   list.appendChild(listItem);
+}
+
+function createLi (bla) {
+  var e = document.createElement("li");
+  e.id = "li_" + bla;
+  return e;
+}
+
+function createCheckB (castravete) {
+var checkBox = document.createElement("input");
+checkBox.type = "checkbox";
+checkBox.id = "cb_" + castravete;
+checkBox.onclick = updateItemStatus;
+}
+
+function renameSpan (cartof, itemText) {
+  var span = document.createElement("span");
+  span.id = "item_" + cartof;
+  span.innerText = itemText;
+  span.onclick = renameItem;
+}
+
+function createDeleteBtn () {
+    var deleteElem = document.createElement("button");
+    deleteElem.type = "button";
+    deleteElem.innerText = "Delete!";
+    deleteElem.onclick = function () {
+      deleteElement(this.parentElement);
+      countElements();
+      updateCountDeleted ();
+    };
 }
 
 var totalItems = 0;
@@ -71,7 +87,7 @@ inItemText.onkeyup = function (event) {
 
   inItemText.value = "";
   countElements();
-}
+  }
 };
 
 function countElements() {
@@ -81,6 +97,17 @@ function countElements() {
   spanTotal.innerText = listItems.length;
 }
 //am apelat aceasta functie pentru a-mi afisa numarul de taskuri la incarcarea paginii
-countElements();
 //github add commit push
 //Tema - functii si obiecte
+
+var countDeleted = 0;
+
+function incrementCountDeleted () {
+   countDeleted = countDeleted + 1;
+}
+
+function updateCountDeleted () {
+  document.getElementById("deleted").innerText = countDeleted;
+}
+//Tema - functia addNewItem - scrie 4 functii pentru variabilele din ea
+//retunr

@@ -53,6 +53,7 @@ var checkBox = document.createElement("input");
 checkBox.type = "checkbox";
 checkBox.id = "cb_" + castravete;
 checkBox.onclick = updateItemStatus;
+return checkBox;
 }
 
 function renameSpan (cartof, itemText) {
@@ -60,6 +61,7 @@ function renameSpan (cartof, itemText) {
   span.id = "item_" + cartof;
   span.innerText = itemText;
   span.onclick = renameItem;
+  return span;
 }
 
 function createDeleteBtn () {
@@ -71,6 +73,7 @@ function createDeleteBtn () {
       countElements();
       updateCountDeleted ();
     };
+    return deleteElem;
 }
 
 var totalItems = 0;

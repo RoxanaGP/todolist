@@ -33,7 +33,7 @@ function addNewItem (list, itemText) {
 
   var listItem = createLi(id);
   var checkBox = createCheckB(id);
-  var span = renameSpan(id);
+  var span = renameSpan(list, itemText);
   var deleteElem = createDeleteBtn(id);
 
   listItem.appendChild(checkBox);
@@ -58,10 +58,13 @@ return checkBox;
 
 function renameSpan (cartof, itemText) {
   var span = document.createElement("span");
+  // console.log(span);
+  console.log(itemText);
   span.id = "item_" + cartof;
   span.innerText = itemText;
   span.onclick = renameItem;
   return span;
+
 }
 
 function createDeleteBtn () {
